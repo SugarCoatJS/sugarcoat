@@ -1,0 +1,5 @@
+{
+  "sourceObject": ["window"],
+  "sourceProperty": "sessionStorage",
+  "destinationMock": "webStorage"
+}

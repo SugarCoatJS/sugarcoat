@@ -1,0 +1,5 @@
+{
+  "sourceObject": ["Document", "prototype"],
+  "sourceProperty": "cookie",
+  "destinationMock": "cookies"
+}

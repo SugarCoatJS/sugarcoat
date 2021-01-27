@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8"/>
+  <title>SugarCoat Report</title>
+  <style type="text/css">
+    * {
+      box-sizing: border-box;
+    }
+    
+    html, body {
+      margin: 0;
+      padding: 0;
+    }
+    
+    body {
+      padding: 1em 1.618em;
+      background-color: #110c39;
+      color: #eafca1;
+      font-family:
+        Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter",
+        "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", Monaco,
+        "Courier New", Courier, monospace;
+    }
+    
+    h1 {
+      margin-top: 0;
+      margin-bottom: 0.67em;
+      
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+    
+    .nameWrapper {
+      display: inline-block;
+      background-color: #147668;
+      border: 0.25em #0f594e dashed;
+      max-width: 100%;
+    }
+    
+    .name {
+      padding: 0.5em;
+      background-color: #199482;
+      font-weight: bold;
+      font-size: 2em;
+      text-shadow: 0.075em 0.075em 0px #110c39;
+    }
+    
+    .bindingList {
+      font-size: 1.5em;
+      margin: 0.67em 0;
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+
+    .bindingList-empty {
+      font-style: italic;
+    }
+    
+    .bindingName {
+      font-weight: bold
+    }
+    
+    .bindingName:after {
+      content: ":";
+    }
+    
+    .accessCount {
+      font-size: 1.25em;
+      font-weight: bold;
+    }
+    
+    .accessTable {
+      border-spacing: 0.25em;
+    }
+    
+    .accessTable td {
+      padding: 0.1em;
+    }
+    
+    .accessPosition {
+      text-align: right;
+      background-color: #585574;
+      color: #e7b7bb;
+      text-shadow: 0.06em 0.06em 0px #110c39;
+      margin-right: 0.25em;
+    }
+    
+    .accessSnippet {
+      background-color: #0c0828;
+      color: #e7e7eb;
+    }
+    
+    .accessArrow {
+      color: #199482;
+      font-size: 1.15em;
+    }
+  </style>
+</head>
+<body>
+  <h1>SugarCoat Report</h1>
+  {{#each targets}}
+    <div class="nameWrapper">
+      <div class="name">{{name}}</div>
+    </div>
+    {{#if bindings.[0]}}
+      <ul class="bindingList">
+        {{#each bindings}}
+          <li>
+            <span class="bindingName">{{name}}</span>
+            Accessed <span class="accessCount">{{accesses.length}}</span>
+            time{{#if accesses.[2]}}s{{/if}}.
+            <table class="accessTable">
+              <tbody>
+                {{#each accesses}}
+                  <tr>
+                    <td class="accessPosition">{{accessPosition.line}}:{{accessPosition.col}}</td>
+                    <td class="accessSnippet">
+                    &mldr;{{accessPrefix}}<span class="accessArrow">&rarr;</span>{{accessSuffix}}&mldr;
+                    </td>
+                  </tr>
+                {{/each}}
+              </tbody>
+            </table>
+          </li>
+        {{/each}}
+      </ul>
+    {{else}}
+      <div class="bindingList bindingList-empty">(No accesses recorded.)</div>
+    {{/if}}
+  {{/each}}
+</body>
+</html>

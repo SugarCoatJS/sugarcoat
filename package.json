@@ -1,0 +1,52 @@
+{
+  "name": "sugarcoat",
+  "version": "0.0.0",
+  "description": "",
+  "author": "Michael Smith <michael@spinda.net> (https://spinda.net)",
+  "license": "MPL-2.0",
+  "homepage": "https://github.com/spinda/sugarcoat#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/spinda/sugarcoat.git"
+  },
+  "bugs": {
+    "url": "https://github.com/spinda/sugarcoat/issues"
+  },
+  "keywords": [],
+  "bin": {
+    "sugarcoat": "cli.js"
+  },
+  "scripts": {
+    "cli": "node cli.js",
+    "record": "node record.js",
+    "check": "prettierx --check \"*.js\" \"**/*.js\"",
+    "fmt": "prettierx --write \"*.js\" \"**/*.js\""
+  },
+  "dependencies": {
+    "ajv": "^6.12.4",
+    "am": "^1.0.2",
+    "await-sleep": "^0.0.1",
+    "better-ajv-errors": "^0.6.7",
+    "commander": "^6.0.0",
+    "crypto-random-string": "^3.2.0",
+    "escodegen": "^1.14.3",
+    "esprima": "^4.0.1",
+    "fast-glob": "^3.2.4",
+    "fs-extra": "^9.0.1",
+    "graphology": "^0.17.1",
+    "graphology-graphml": "^0.2.0",
+    "handlebars": "^4.7.6",
+    "iterare": "^1.2.1",
+    "jsonlint": "^1.6.3",
+    "line-column": "^1.0.2",
+    "lodash.groupby": "^4.6.0",
+    "lodash.sortby": "^4.7.0",
+    "puppeteer-core": "^1.19.0",
+    "sanitize-filename": "^1.6.3",
+    "tmp-promise": "^3.0.2",
+    "verror": "^1.10.0"
+  },
+  "devDependencies": {
+    "prettierx": "^0.14.0"
+  }
+}

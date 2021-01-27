@@ -1,0 +1,23 @@
+{
+  "targets": {
+    "foo": {
+      "patterns": ["||example.com/foo.js"],
+      "policy": {
+        "include": [
+          "Document#cookie"
+        ],
+        "exclude": [
+          "Navigator#userAgent"
+        ]
+      }
+    }
+  },
+  "graphs": ["data/graphs/**/*.graphml"],
+  "code": "data/code",
+  "trace": "data/trace.json",
+  "report": "data/report.html",
+  "bundle": {
+    "rules": "data/rules.txt",
+		"resources": "data/resources.json"
+  }
+}

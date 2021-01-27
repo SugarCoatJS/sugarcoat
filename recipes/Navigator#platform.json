@@ -1,0 +1,5 @@
+{
+  "sourceObject": ["Navigator", "prototype"],
+  "sourceProperty": "platform",
+  "destinationMock": "navigatorId"
+}
